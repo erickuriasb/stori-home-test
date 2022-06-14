@@ -1,3 +1,4 @@
+import shutil
 import pandas as pd
 
 from fastapi import FastAPI, status, File, UploadFile
@@ -43,6 +44,8 @@ def process_transactions(df):
 
 @app.post('/file_processing/')
 async def read_csv_file(email: EmailStr, file: UploadFile):
-    df = pd.read_csv(file.file)
-    print(email)
-    return process_transactions(df)
+    with open ("movements.csv", "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    df = pd.read_csv("movements.csv")
+    report = process_transactions(df)
+    return report
