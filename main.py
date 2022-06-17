@@ -2,7 +2,6 @@ import shutil
 import pandas as pd
 
 from fastapi import FastAPI, File, UploadFile
-from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from pydantic import EmailStr
 
 from email_sender import smtp_email_sender
@@ -41,13 +40,13 @@ def process_transactions(df):
     report["Average_Credit_Amount"] = Credit_Amount / Count_Credit_Transactions
     #report["Transactions_By_Month"] = [{key: value} for key,value in transactions_by_month.items()]
     report["Transactions_By_Month"] = transactions_by_month
-    
+
     return report
 
 
 @app.post('/file_processing/')
 async def read_csv_file(email: EmailStr, file: UploadFile):
-    with open ("movements.csv", "wb") as buffer:
+    with open("movements.csv", "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
     df = pd.read_csv("movements.csv")
     report = process_transactions(df)

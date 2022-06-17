@@ -1,10 +1,10 @@
-from calendar import month
 import smtplib
 from decouple import config
 from email.message import EmailMessage
 from email.mime.text import MIMEText
 
-def smtp_email_sender(email_to: str, report: dict): 
+
+def smtp_email_sender(email_to: str, report: dict):
     user = config('OUTLOOK_USER')
     password = config('OUTLOOK_PASSWORD')
     server = smtplib.SMTP("smtp.office365.com", 587)
@@ -41,7 +41,6 @@ def smtp_email_sender(email_to: str, report: dict):
     try:
         server.sendmail(user, email_to, message_test.as_string())
     except Exception as ex:
-        print(ex)
+        raise Exception("")
     else:
         print("E-mail sended!")
-
