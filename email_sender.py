@@ -23,7 +23,7 @@ def smtp_email_sender(email_to: str, report: dict):
         </div>
         <h1>Hi,</h1>
         <p>How are you?</p>
-        <p>This is the report of movements and transactions in you account:</p>
+        <p>This is the report of movements and transactions in your account:</p>
         <p>
         Total Balance is <strong>${report["Total_Balance"]:.2f}</strong><br>
         Average credit ammount: <strong>${report["Average_Credit_Amount"]}</strong><br>
