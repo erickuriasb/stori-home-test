@@ -5,7 +5,7 @@ email: erickuriasb@gmail.com
 
 ## Home Test for Python Engineer Position in Stori
   
-
+An instance of this app, is running right now on AWS with the next url: [App Instance on AWS](http://18.144.176.65/docs), you can check it out and test it.
   
 ### Prerequisites:
 * Docker
@@ -22,7 +22,7 @@ git clone git@github.com:erickuriasb/stori-home-test.git
 2. Setup the environment variables, the app need them to send the email report.
 ```bash
 export OUTLOOK_USER="user"
-export OUTLOOK_PASSOWRD="password"
+export OUTLOOK_PASSWORD="password"
 ```
 3. For this challenge, I used Outlook Mail to send the emails with the smtplib python module as email client. To send your own emails, you need to create a free account on [Outlook Mail](https://outlook.office.com/mail/) and use the credentials(user and password) as environment variables. If you would to use a Gmail account, since May 30th, Gmail doesn't permit access for 'insecure' email clients, It's a new privacy policy, that's why a choosed Outlook Mail.
 

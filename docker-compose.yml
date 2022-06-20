@@ -8,6 +8,6 @@ services:
             - "587:587"
         environment:
             - OUTLOOK_USER=${OUTLOOK_USER}
-            - OUTLLOK_PASSWORD=${OUTLOOK_PASSWORD}
+            - OUTLOOK_PASSWORD=${OUTLOOK_PASSWORD}
         volumes:
             - .:/app
