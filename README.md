@@ -15,9 +15,9 @@ An instance of this app, is running right now on AWS with the next url: [App Ins
 
 All the next commands are thinked for a development environment on a Linux Distribution or Mac, if you are using Windows maybe these steps could be a little different. In that case I recommend to use a terminal emulator like [Cmder](https://cmder.net/) or Powershell.  
 
-1. First you need to clone this repo to your local machine.
+1. First you need to clone this repo to your local machine, Use the HTTPS link.
 ```bash
-git clone git@github.com:erickuriasb/stori-home-test.git
+git clone https://github.com/erickuriasb/stori-home-test.git
 ```
 2. Setup the environment variables, the app need them to send the email report.
 ```bash
